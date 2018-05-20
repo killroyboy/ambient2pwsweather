@@ -1,0 +1,44 @@
+{
+  "name": "ambient2pwsweather",
+  "version": "0.0.1",
+  "description": "Pull weather data from AmbientWeather.net and push to PWSWeather",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start dev": "nodemon index.js",
+    "build": "zip -x 'node_modules/*' -r /tmp/ambient2pwsweather-$(npm run version).zip *",
+    "version": "echo $npm_package_version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://killroyboy@github.com/killroyboy/ambient2pwsweather.git"
+  },
+  "keywords": [
+    "ambient",
+    "weather",
+    "pwsweather"
+  ],
+  "author": "Dan Wilson [killroyboy@gmail.com]",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/killroyboy/ambient2pwsweather/issues"
+  },
+  "homepage": "https://github.com/killroyboy/ambient2pwsweather#readme",
+  "dependencies": {
+    "ambient-weather-api": "0.0.6",
+    "config": "^1.30.0",
+    "eazy-logger": "^3.0.2",
+    "got": "^8.3.1",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.1"
+  },
+  "jshintConfig": {
+    "globals": {
+      "require": true
+    }
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
+}
