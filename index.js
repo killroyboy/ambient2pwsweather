@@ -13,7 +13,7 @@ const got = require('got'),
 	moment = require('moment'),
 	logger = require('eazy-logger').Logger({
 		useLevelPrefixes: true,
-		level : config.log_level
+		level : process.env.LOG_LEVEL || config.log_level
 	}),
 	AmbientAPI = require('ambient-weather-api'),
 	appKey = config.ambient.app_key || process.env.AMBIENT_APP_KEY,

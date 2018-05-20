@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "start dev": "nodemon index.js",
-    "build": "zip -x 'node_modules/*' -r /tmp/ambient2pwsweather-$(npm run version).zip *",
+    "build": "zip -x 'node_modules/*' -x 'config/development.json' -r /tmp/ambient2pwsweather-$(npm run version).zip *",
     "version": "echo $npm_package_version"
   },
   "repository": {
