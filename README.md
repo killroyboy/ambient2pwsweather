@@ -6,10 +6,9 @@ Summary
 
 Requirements
 ---------------
-- Node 6.x
-- NPM 3.x
-- An [AmbientWeather.net account](https://ambientweather.net)
-- A [PWSWeather.com account](https://www.pwsweather.com)
+- Node.js 6.x
+- [AmbientWeather.net account](https://ambientweather.net)
+- [PWSWeather.com account](https://www.pwsweather.com)
 
 
 Installation
