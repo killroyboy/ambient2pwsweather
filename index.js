@@ -33,21 +33,26 @@ if (!appKey || !apiKey || !pwsStation || !pwsPassword) {
 	process.exit();
 }
 
+// instantiate the API
 const api = new AmbientAPI({
 	apiKey : apiKey,
 	applicationKey : appKey
 });
 
-logger.debug('Connecting to AmbientWeather.net...');
-api.connect();
-api.on('connect', () => logger.debug('Connected to Ambient Weather Realtime API'));
-api.on('subscribed', data => {
-	logger.debug('Subscribed to device:', data.devices[0].info.name);
+// On connect, we subscribe (this will also re-subscribe when the connection fails and reconnects)
+api.on('connect', () => {
+	logger.debug('Connected to Ambient Weather Realtime API')
+	api.subscribe(apiKey);
 });
 
-var params = {}, url = '';
-// http://www.pwsweather.com/pwsupdate/pwsupdate.php?ID=STATIONID&PASSWORD=password&dateutc=2000-12-01+15%3A20%3A01&winddir=225&windspeedmph=0.0&windgustmph=0.0&tempf=34.88&rainin=0.06&dailyrainin=0.06&monthrainin=1.02&yearrainin=18.26&baromin=29.49&dewptf=30.16&humidity=83&weather=OVC&solarradiation=183&UV=5.28&softwaretype=Examplever1.1&action=updateraw
+api.on('subscribed', data => {
+	logger.debug('Subscribed to device:', data.devices[0].info.name);
+	logger.debug(data.devices[0].lastData.date + ' - ' + data.devices[0].info.name + ' current outdoor temperature is: ' + data.devices[0].lastData.tempf + '°F');
+});
 
+var params = {};
+
+// On data, package it up for PWSweather.com and send it over
 api.on('data', data => {
 	logger.debug(data.date + ' - ' + data.device.info.name + ' current outdoor temperature is: ' + data.tempf + '°F');
 
@@ -82,13 +87,15 @@ api.on('data', data => {
 	got(config.pws_base_url, {query: params}).then(response => {
 		if (response.statusCode === 200) {
 			logger.debug('Success', response.statusMessage);
-			// logger.debug('Body', response.body);
 		} else {
-			logger.debug('Failed', response.statusMessage);
+			logger.error('Failed', response.statusMessage);
 		}
 	}).catch(reason => {
-		logger.error('pwsweather failed', reason);
+		logger.error('PWSweather request failed', reason);
 	});
 });
-api.subscribe(apiKey);
+
+// Let's start the connection
+logger.debug('Connecting to AmbientWeather.net...');
+api.connect();
 
