@@ -1,6 +1,6 @@
 {
   "name": "ambient2pwsweather",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Pull weather data from AmbientWeather.net and push to PWSWeather",
   "main": "index.js",
   "scripts": {
