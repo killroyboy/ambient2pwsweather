@@ -1,0 +1,12 @@
+{
+  "ambient" : {
+    "api_key" : "",
+    "app_key" : ""
+  },
+  "pwsweather" : {
+    "station_id" : "",
+    "password" : ""
+  },
+  "log_level" : "info",
+  "pws_base_url" : "http://www.pwsweather.com/pwsupdate/pwsupdate.php"
+}
