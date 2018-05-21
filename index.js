@@ -64,7 +64,7 @@ api.on('data', data => {
 	params = _.merge(data, {
 		ID : pwsStation,
 		PASSWORD : pwsPassword,
-		dateutc : moment(data.date).format('YYYY-MM-DD+HH:mm:ss'),
+		dateutc : moment(data.date).format('YYYY-MM-DD HH:mm:ss'),
 		baromin : data.baromrelin,
 		dewptf : data.dewPoint,
 		humidity : data.humidityin,
