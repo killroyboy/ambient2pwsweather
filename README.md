@@ -51,7 +51,7 @@ Alternatively, the following environment variables can be used to override confi
 - AMBIENT_API_KEY - (Obtained from your AmbientWeather.net profile page)
 - AMBIENT_APP_KEY - (Obtained by requesting from AmbientWeather support)
 - PWD_STATION_ID - (From your PWS Weather account)
-- PWD_PASSWORD - (From your PWS Weather account)
+- PWD_PASSWORD - (From your PWS Weather account. NOTE: Your password cannot have any punctuation or special characters)
 - LOG_LEVEL - (debug, info, warn, error)
 
 Author
