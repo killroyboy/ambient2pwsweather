@@ -2,12 +2,12 @@
 
 Summary
 ---------------
-*ambient2pwsweather* is an open source Node.js project providing a software bridge between Ambient Weather Stations (through AmbientWeather.net) and PWS Weather.
+*ambient2pwsweather* is an open source Node.js project providing a software bridge between Ambient Weather Stations (through AmbientWeather.net) and PWSWeather.com (and therefore Aeris Weather).
 
 Requirements
 ---------------
 - Node.js 6.x
-- [AmbientWeather.net account](https://ambientweather.net)
+- [AmbientWeather.net account](https://ambientweather.net) (API Key and Application Key)
 - [PWSWeather.com account](https://www.pwsweather.com)
 
 
@@ -17,7 +17,7 @@ To use *ambient2pwsweather*, you must first install [Node.js](https://nodejs.org
 
 Customize the configuration by copying the `config/default.json` file to `config/local.json` and then editing your settings. If you edit default.json directly, it is likely that future versions of *ambient2pwsweather* will overwrite your customizations. Alternatively, you can use environment variables to override specific configuration variables.
 
-Open a command line window (`terminal` on MacOS or follow [these instructions](https://www.lifewire.com/command-prompt-2625840) for Windows) and issue the following commands within the yts-downloader directory:
+Open a command line window (`terminal` on MacOS or follow [these instructions](https://www.lifewire.com/command-prompt-2625840) for Windows) and issue the following commands within the *ambient2pwsweather* directory:
 
 ```js
 npm install
