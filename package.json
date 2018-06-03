@@ -1,13 +1,13 @@
 {
   "name": "ambient2pwsweather",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Pull weather data from AmbientWeather.net and push to PWSWeather",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "start dev": "nodemon index.js",
-    "build": "zip -x 'node_modules/*' -x 'config/development.json' -r /tmp/ambient2pwsweather-$(npm run version).zip *",
+    "build": "mkdir -p build && zip -x 'node_modules/*' -x 'build/*' -x '.git/*' -x '.idea/*' -x 'config/development.json' -r build/ambient2pwsweather-$(npm run version --silent).zip *",
     "version": "echo $npm_package_version"
   },
   "repository": {

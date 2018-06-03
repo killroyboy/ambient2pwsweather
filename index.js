@@ -25,8 +25,8 @@ const got = require('got'),
 logger.info('------- ambient2weather v' + pkg.version, '--------');
 logger.debug('Ambient Application Key:', appKey);
 logger.debug('Ambient API Key:', apiKey);
-logger.debug('PWD Station ID:', pwsStation);
-logger.debug('PWD Password:', pwsPassword);
+logger.debug('PWS Station ID:', pwsStation);
+logger.debug('PWS Password:', pwsPassword);
 
 if (!appKey || !apiKey || !pwsStation || !pwsPassword) {
 	logger.error('Insufficient configuration data. Missing API Key, App Key, Station ID or PWS Password.');
@@ -68,7 +68,7 @@ api.on('data', data => {
 		baromin : data.baromrelin,
 		dewptf : data.dewPoint,
 		humidity : data.humidityin,
-		rainin : data.totalrainin,
+		rainin : data.hourlyrainin,
 		UV : data.uv,
 		softwaretype: 'ambient2pwsweather-' + pkg.version,
 		action : 'updateraw'
@@ -81,6 +81,8 @@ api.on('data', data => {
 	delete params.baromabsin;
 	delete params.feelslike;
 	delete params.maxdailygust;
+	delete params.totalrainin;
+	delete params.hourlyrainin;
 
 	// logger.debug('params', params);
 
