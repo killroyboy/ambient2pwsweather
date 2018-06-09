@@ -26,8 +26,7 @@ npm install
 node index.js
 ```
 
-The first command will install all the prerequisites and the second starts *ambient2pwsweather*. You will need to keep this window and process running in order to allow it to continue to retrieve data from AmbientWeather.net. There are tools available (like [forever](https://www.npmjs.com/package/forever)) to ensure the process runs in the background.
-
+The first command will install all the prerequisites and the second starts *ambient2pwsweather*. You will need to keep this window and process running in order to allow it to continue to retrieve data from AmbientWeather.net.
 
 Configuration
 ---------------
@@ -53,6 +52,31 @@ Alternatively, the following environment variables can be used to override confi
 - PWD_STATION_ID - (From your PWS Weather account)
 - PWD_PASSWORD - (From your PWS Weather account. NOTE: Your password cannot have any punctuation or special characters)
 - LOG_LEVEL - (debug, info, warn, error)
+
+Install as Service
+---------------
+To install as a service, you must first install a service tool for your platform.
+
+```js
+// for macOS
+npm install node-mac
+
+// for Windows 
+npm install node-windows
+
+// for Linux
+npm install node-linux
+```
+
+Then install as a service:
+```js
+npm run service install
+```
+
+You can view logs through the standard/system logging for your platform. 
+
+For more details, visit the respective module npm page: [macOS](https://www.npmjs.com/package/node-mac), [Windows](https://www.npmjs.com/package/node-windows), [Linux](https://www.npmjs.com/package/node-linux)
+
 
 Author
 ---------------

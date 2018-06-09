@@ -6,6 +6,8 @@
  * * Currently only supports 1 device from AmbientWeather
  */
 
+process.env['NODE_CONFIG_DIR'] = __dirname + '/config/';
+
 const got = require('got'),
 	pkg = require('./package.json'),
 	config = require('config'),
