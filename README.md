@@ -1,5 +1,8 @@
 # ambient2pwsweather
 
+# !DEPRECATED!
+This project is now deprecated as AmbientWeather.net now supports automatic data submittion to PWSWeather. Please see the [https://www.ambientweather.com/blog.html](Ambient Weather Blog) for more information.
+
 Summary
 ---------------
 *ambient2pwsweather* is an open source Node.js project providing a software bridge between Ambient Weather Stations (through AmbientWeather.net) and PWSWeather.com (and therefore Aeris Weather).
