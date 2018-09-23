@@ -1,7 +1,7 @@
 # ambient2pwsweather
 
 # !DEPRECATED!
-This project is now deprecated as AmbientWeather.net now supports automatic data submittion to PWSWeather. Please see the [https://www.ambientweather.com/blog.html](Ambient Weather Blog) for more information.
+This project is now deprecated as AmbientWeather.net now supports automatic data submittion to PWSWeather. Please see the [Ambient Weather Blog](https://www.ambientweather.com/blog.html) for more information.
 
 Summary
 ---------------
